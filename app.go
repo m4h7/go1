@@ -12,6 +12,6 @@ func main() {
 }
 
 func handlerFunc(w http.ResponseWriter, r *http.Request) {
-    log.Printf("Pinged from %s", r.RemoteAddr)
+    log.Printf("Ping from %s", r.RemoteAddr)
     fmt.Fprintln(w, "Hello World")
 }
