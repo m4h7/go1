@@ -15,11 +15,11 @@ spec:
         app: snowflake
     spec:
       containers:
-      - image: k8s.gcr.io/serve_hostname
+      - image: <IMAGE>
         imagePullPolicy: Always
         name: snowflake
         ports:
-        - containerPort: 80
+        - containerPort: 9090
 ---
 apiVersion: v1
 kind: Service
@@ -28,7 +28,7 @@ metadata:
 spec:
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 9090
   selector:
     app: snowflake
   type: LoadBalancer
